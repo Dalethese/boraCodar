@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap');
+
+*
+{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+:root 
+{
+  --highLight: #7C3AED;
+  --chart-gradient:  linear-gradient(180deg, rgba(124, 58, 237, 0.5) 21.15%, rgba(124, 58, 237, 0) 100%);
+  --text-primary: #0F172A;
+  --text-secundary: #334155;
+  --surface-primary: #FFF;
+  --surface-secundary: #EDE9FE;
+  --graphic-elements: #94A3B8;
+  --bg-color: #F8FAFC;
+}
+
+body 
+{
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-color);
+}
+
+.container
+{
+  width: 800px;
+  /* height: 692px; */
+  padding: 64px 80px;
+  box-shadow: 0px 4px 32px rgba(15, 23, 42, 0.15);
+  border-radius: 16px;
+  background: var(--surface-primary);
+
+  display: flex;
+  flex-direction: column;
+  gap: 64px;
+  margin: auto;
+}
+
+/* Conversor */
+.conversorDeMoedas
+{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.titulo
+{
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.conversor
+{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+}
+.inputs
+{
+  max-width: 292px;
+  height: 56px;
+  border: 1.5px solid var(--graphic-elements);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.inputs:hover
+{
+  border-color: var(--highLight);
+}
+.inputs #valor
+{
+  width: 162px;
+  /* height: calc(56px - 1.5px); */
+  border-radius: 8px;
+  border: none;
+  outline: none;
+  padding: 16px;
+}
+.inputs .moedas
+{
+  position: relative;
+  width: 118px;
+  height: calc(56px - 1.5px);
+  padding: 16px;
+  border-radius: 8px;
+  border: none;
+  outline: none;
+
+  cursor: pointer;
+}
+.moedas:hover
+{
+  background-color: var(--surface-secundary);
+}
+.moedaEscolhida
+{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.moedas .moedaEscolhida img 
+{
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+}
+
+/* outras moedas */
+.moedas.active .outrasMoedas
+{
+  height: 170px;
+  animation: openMenu;
+}
+
+.outrasMoedas
+{
+  position: absolute;
+  top: 60px;
+  left: 0;
+  max-width: 160px;
+  height: 0px;
+  background: var(--surface-primary);
+  box-shadow: 0px 4px 16px rgba(15, 23, 42, 0.15);
+  border-radius: 8px;
+
+  overflow-y: scroll;
+  z-index: 10;
+
+  display: flex;
+  flex-direction: column;
+
+  transition: .5s;
+}
+@keyframes openMenu {
+  0%
+  {
+    height: 0px;
+  }
+}
+/* scrollbar */
+.outrasMoedas::-webkit-scrollbar
+{
+  width: 2px;
+  background: var(--surface-primary);
+}
+.outrasMoedas::-webkit-scrollbar-thumb
+{
+  background: var(--graphic-elements);
+  height: 24px;
+}
+.outrasMoedas ul
+{
+  list-style-type: none;
+}
+.outrasMoedas ul li 
+{
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 16px;
+  cursor: pointer;
+}
+.outrasMoedas ul li:hover 
+{
+  background: var(--surface-secundary);
+}
+
+/* taxa de câmbio */
+.taxaDeCambio .titulo 
+{
+  margin-bottom: 24px;
+}
+.taxaDeCambio img
+{
+  width: 100%;
+}
+@media (max-width: 769px)
+{
+  .container
+  {
+    width: 320px;
+    height: 512px;
+    padding: 16px;
+  }
+  .titulo
+  {
+    font-size: 16px;
+  }
+  .conversorDeMoedas .conversor
+  {
+    flex-direction: column;
+  }
+  .conversor .inputs
+  {
+    width: 100%;
+  }
+  .inputs #valor
+  {
+    width: 90%;
+  }
+}

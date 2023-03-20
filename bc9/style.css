@@ -5,6 +5,8 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   font-family: 'Inter', sans-serif;
 }
 
@@ -18,6 +20,8 @@
   --surface-secundary: #EDE9FE;
   --graphic-elements: #94A3B8;
   --bg-color: #F8FAFC;
+  
+  font-size: 62.5%;
 }
 
 body 
@@ -25,12 +29,13 @@ body
   width: 100vw;
   height: 100vh;
   background: var(--bg-color);
+  font-size: 1.6rem;
+  display: grid;
+  place-content: center;
 }
 
 .container
 {
-  width: 800px;
-  /* height: 692px; */
   padding: 64px 80px;
   box-shadow: 0px 4px 32px rgba(15, 23, 42, 0.15);
   border-radius: 16px;
@@ -68,7 +73,7 @@ body
 {
   max-width: 292px;
   height: 56px;
-  border: 1.5px solid var(--graphic-elements);
+  outline: 1.5px solid var(--graphic-elements);
   border-radius: 8px;
   display: flex;
   align-items: center;
@@ -76,7 +81,7 @@ body
 }
 .inputs:hover
 {
-  border-color: var(--highLight);
+  outline-color: var(--highLight);
 }
 .inputs #valor
 {

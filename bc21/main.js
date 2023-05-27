@@ -1,33 +1,31 @@
-import { divLoad } from "./src/DivLoad.js"
+import { changeQuantity } from "./src/changeQuantity.js"
+import { dotsOrEmpty } from "./src/dotsOrEmptyOnText.js"
+import { loadFinishBtn } from "./src/loadingFinishBtn.js"
+import { productValue } from "./src/productValues.js"
+import { getProductsValues, totalValue } from "./src/totalValue.js"
 
-const descriptionCardsElements = document.querySelectorAll('.content p')
-const limit = 25
-
-for (let p of descriptionCardsElements) {
-  const aboveLimit = p.innerText.length > limit
-  const dotOrEmpty = aboveLimit ? '...' : ''
-
-  p.innerText = p.innerText.substring(0, limit) + dotOrEmpty
-}
-
+// declarations
 const finishBtn = document.querySelector('#finish-btn')
+const quantityButtons = document.querySelectorAll('.quantity-buttons button')
 
-function createFinishBtnLoading(ev) {
-  finishBtn.innerText = ''
+// events
+document.addEventListener('DOMContentLoaded', () => {
+  dotsOrEmpty()
+  getProductsValues()
+  totalValue()
+})
 
-  const divLoadIcon = divLoad()
-  
-  const loadIcon = document.createElement('i')
-  loadIcon.classList.add('ph', 'ph-spinner-gap')
-  loadIcon.style.fontSize = '1.4em'
-
-  divLoadIcon.appendChild(loadIcon)
-  finishBtn.append(divLoadIcon)
-  
-}
-
-
+quantityButtons.forEach(button => {
+  button.addEventListener('click', () => {
+    changeQuantity(button)
+    getProductsValues()
+    totalValue()
+  })
+})
 
 finishBtn.addEventListener('click', (ev) => {
-  createFinishBtnLoading(ev)
+  loadFinishBtn(ev, finishBtn)
+  setTimeout(() => {
+    finishBtn.textContent = 'Finalizar compra'
+  }, 4000);
 })

@@ -160,10 +160,11 @@ body {
 }
 
 .quantity-buttons p {
-  margin: 0 2rem;
+  width: 4rem;
+  text-align: center;
 }
 
-.quantity-buttons span {
+.quantity-buttons button {
   width: 4rem;
   height: 4rem;
 
@@ -171,28 +172,29 @@ body {
   align-items: center;
   justify-content: center;
 
+  background-color: transparent;
   border: 1.5px solid var(--stroke-color);
   border-radius: .8rem;
   cursor: pointer;
   transition: all .2s;
 }
 
-.quantity-buttons span i {
+.quantity-buttons button i {
   color: var(--brand-color-light);
   transition: all .2s;
 }
-.quantity-buttons span:hover i {
+.quantity-buttons button:hover i {
   color: var(--text-color-primary);
 }
 
-.quantity-buttons span:nth-child(3) {
+.quantity-buttons button:nth-child(3) {
   border-color: var(--brand-color-light);
 }
 
-.quantity-buttons span:nth-child(1):hover {
+.quantity-buttons button:nth-child(1):hover {
   border-color: var(--brand-color-light);
 }
-.quantity-buttons span:nth-child(3):hover {
+.quantity-buttons button:nth-child(3):hover {
   background-color: var(--brand-color);
 }
 
@@ -218,29 +220,44 @@ body {
   color: var(--stroke-color);
 }
 
-.cupom {
-  align-self: flex-end;
-
+.coupon {
   display: flex;
   align-items: center;
-  gap: .8rem;
-
-  color: var(--brand-color-light);
+  align-self: flex-end;
+  gap: 1rem;
   transition: all .3s;
 }
 
-.cupom:hover, 
-.cupom:hover button {
+.coupon:hover button {
   color: var(--brand-color-lighter);
 }
 
-.cupom button {
+.coupon button {
   background-color: transparent;
   border: none;
   color: var(--brand-color-light);
   font-size: 1em;
   cursor: pointer;
   transition: all .3s;
+}
+
+.add-coupon {
+  width: 12.2rem;
+  background-color: transparent;
+  border: 1.5px solid transparent;
+  color: var(--text-color-primary);
+  outline: none;
+}
+.add-coupon::placeholder {
+  color: var(--brand-color-light);
+}
+
+.add-coupon:hover::placeholder {
+  color: var(--brand-color-lighter);
+}
+
+.add-coupon:focus {
+  border-bottom: 1.5px solid var(--brand-color-light);
 }
 
 #finish-btn {

@@ -1,14 +1,3 @@
-// export function changeQuantityMinus(minusBtn) {
-//   const textQuantityEl = minusBtn.parentElement.querySelector('.text-quantity')
-//   let textQuantityContent = +textQuantityEl.textContent
-//   textQuantityContent = textQuantityContent > 0 ? textQuantityContent - 1 : textQuantityContent
-//   textQuantityEl.innerText = textQuantityContent
-// }
-
-// export function changeQuantityPlus(plusBtn) {
-  
-// }
-
 export function changeQuantity(button) {
   let minusBtn, plusBtn;
   const textQuantityEl = button.parentElement.querySelector('.text-quantity')

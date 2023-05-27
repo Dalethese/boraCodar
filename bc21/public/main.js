@@ -1,8 +1,7 @@
-import { changeQuantity } from "./src/changeQuantity.js"
-import { dotsOrEmpty } from "./src/dotsOrEmptyOnText.js"
-import { loadFinishBtn } from "./src/loadingFinishBtn.js"
-import { productValue } from "./src/productValues.js"
-import { getProductsValues, totalValue } from "./src/totalValue.js"
+import { changeQuantity } from "../src/changeQuantity.js"
+import { dotsOrEmpty } from "../src/dotsOrEmptyOnText.js"
+import { loadFinishBtn } from "../src/loadingFinishBtn.js"
+import { getProductsValues, totalValue } from "../src/totalValue.js"
 
 // declarations
 const finishBtn = document.querySelector('#finish-btn')

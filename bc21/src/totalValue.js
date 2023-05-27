@@ -30,7 +30,5 @@ export function getProductsValues() {
     }
 
     virtualProducts.push(product)
-  })
-  
-  console.log("🚀 ~ virtualProducts:", virtualProducts)
+  }) 
 }
